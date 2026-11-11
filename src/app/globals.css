@@ -1,26 +1,114 @@
-@import "tailwindcss";
 
+@import "tailwindcss";
+@import "@heroui/styles";
+
+/* =================================
+   BIZNEX DESIGN SYSTEM
+================================= */
+
+/* Light Theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  --background: #F8F7FC;
+  --foreground: #171525;
+
+  --surface: #FFFFFF;
+  --surface-secondary: #F0EDF8;
+
+  --border: #E5E1EF;
+
+  --brand-purple: #8B6CF6;
+  --brand-purple-dark: #6D4DE0;
+
+  --brand-gold: #D6B45A;
+  --brand-gold-dark: #B8953F;
+
+  --muted: #77738A;
+  --success: #16A36A;
+  --warning: #E5A000;
+  --danger: #DC4545;
+
+  --radius: 0.75rem;
 }
 
+/* Dark Theme */
+.dark {
+  color-scheme: dark;
+
+  --background: #0B0A12;
+  --foreground: #F5F3FA;
+
+  --surface: #151320;
+  --surface-secondary: #201D2E;
+
+  --border: #302B40;
+
+  --brand-purple: #A58BFF;
+  --brand-purple-dark: #8B6CF6;
+
+  --brand-gold: #E2C16D;
+  --brand-gold-dark: #D6B45A;
+
+  --muted: #A39DB5;
+  --success: #35C98A;
+  --warning: #F2BC4B;
+  --danger: #FF7070;
+}
+
+/* Tailwind CSS Theme Tokens */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-surface: var(--surface);
+  --color-surface-secondary: var(--surface-secondary);
+
+  --color-border: var(--border);
+
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-purple-dark: var(--brand-purple-dark);
+
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-gold-dark: var(--brand-gold-dark);
+
+  --color-muted: var(--muted);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =================================
+   GLOBAL STYLES
+================================= */
+
+* {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: var(--brand-purple);
+  color: #FFFFFF;
 }
